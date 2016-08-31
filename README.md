@@ -1,0 +1,1 @@
+In the process of learning backbone.js, following tutorial found here: http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/ , and original project found here: https://github.com/jeromegn/backbone.localstorage . Will be adding original additions once tutorial is completed.
