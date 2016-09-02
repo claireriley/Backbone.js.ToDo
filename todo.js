@@ -20,12 +20,12 @@ app.TodoList = Backbone.Collection.extend({
 app.todoList = new app.TodoList();
 
 // Views
-// render individual todo items list
+// renders individual todo items list
 app.TodoView = Backbone.View.extend({
     tagName: 'li',
     template: _.template($('#item-template').html()),
     render: function(){
-        this.$el.html(this.template(this.model.toJson()));
+        this.$el.html(this.template(this.model.toJSON()));
         return this; // enables chained calls
     }
 });
@@ -45,12 +45,12 @@ app.AppView = Backbone.View.extend({
     if ( e.which !== 13 || !this.input.val().trim() ) { // ENTER_KEY = 13
       return;
     }
-    app.todoList.create(this.newAttributes());
-    this.input.val(''); // clean input box
+    app.todoList.create(this.newAttributes()); // creates new todo list
+    this.input.val(''); // refreshes input box
   },
   addOne: function(todo){
     var view = new app.TodoView({model: todo});
-    $('#todo-list').append(view.render().el);
+    $('#todo-list').append(view.render().el); // renders view with appended items
   },
   addAll: function(){
     this.$('#todo-list').html(''); // clean the todo list
@@ -58,9 +58,9 @@ app.AppView = Backbone.View.extend({
   },
   newAttributes: function(){
     return {
-      title: this.input.val().trim(),
-      completed: false
+      title: this.input.val().trim(), // title of item
+      completed: false // item initialized as not completed or false
     }
   }
 });
-//////7 COMMENT
+app.appView = new app.AppView(); // view that takes collection and renders individual items in it
