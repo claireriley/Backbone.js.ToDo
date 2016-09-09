@@ -1,12 +1,12 @@
     #todoapp ul {
-      list-style-type: none; /* Hides bullet points from todo list */
+      list-style-type: none; /* hides bullet points from todo list */
     }
     #todo-list input.edit {
-      display: none; /* Hides input box*/
+      display: none; /* hides input box*/
     }
     #todo-list .editing label {
-      display: none; /* Hides label text when .editing*/
+      display: none; /* hides label text when .editing*/
     }    
     #todo-list .editing input.edit {
-      display: inline; /* Shows input text box when .editing*/
+      display: inline; /* shows input text box when .editing*/
     }    

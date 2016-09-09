@@ -44,7 +44,7 @@ app.TodoView = Backbone.View.extend({
   },
   initialize: function(){
     this.model.on('change', this.render, this);
-    this.model.on('destroy', this.remove, this); // remove: Convenience Backbone's function for removing the view from the DOM.
+    this.model.on('destroy', this.remove, this); // listens for remove button to take item off list and remove view from DOM
   },      
   events: {
     'dblclick label' : 'edit',
@@ -72,7 +72,7 @@ app.TodoView = Backbone.View.extend({
   toggleCompleted: function(){
     this.model.toggle();
   },
-  destroy: function(){
+  destroy: function(){ // destroy old model when item is removed
     this.model.destroy();
   }      
 });
@@ -102,7 +102,7 @@ app.AppView = Backbone.View.extend({
   },
   addAll: function(){
     this.$('#todo-list').html(''); // clean the todo list
-    // filter todo item list
+    // filter todo item list to show only what user clicks
     switch(window.filter){
       case 'pending':
         _.each(app.todoList.remaining(), this.addOne);
@@ -124,13 +124,12 @@ app.AppView = Backbone.View.extend({
 });
 
 // Routers
-
+// in backbone routes are hash maps that match url to patterns to functions
 app.Router = Backbone.Router.extend({
   routes: {
-    '*filter' : 'setFilter'
+    '*filter' : 'setFilter' // filtering between complete and incomplete tasks
   },
   setFilter: function(params) {
-    console.log('app.router.params = ' + params);
     window.filter = params.trim() || '';
     app.todoList.trigger('reset');
   }
