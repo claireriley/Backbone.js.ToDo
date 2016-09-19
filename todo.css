@@ -13,36 +13,66 @@
 #title{
     font-family: 'Baloo Paaji', cursive;
     font-size: 30px;
+    color: #323234;
+    text-align: center;
 }
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #111111;
+    background-color: white;
 }
 #todoapp{
     background-color: #f2f2f3;
-    border-radius: 5px;
-
-    
+    border-radius: 12px;
 }
 #base{
     position: relative;
     margin: auto;
     background-color: #e5e5e6;
-    border-radius: 5px;
+    border-radius: 12px;
     width:25%;
-    padding: 3px;
-    display: block;
-    
+    padding: 1px;
+    box-shadow:3px 3px 7px #e5e5e6;
+    word-wrap: break-word;
 
 }
 #todo-list{
-    margin-bottom:0
+    margin-bottom:0;
+    border-radius: 12px;
+    margin-left: 0px;
 }
 #new-todo{
-    width:98%;
+    width:75%;
+    text-align: center;
+    margin: 0 auto;
     display: block;
-    margin : 0 auto;
+}
+
+#new-todo:focus{
+    outline-color: #00b200;
 }
 #options{
     text-align: center;
+}
+a:link{
+    color: #828287;
+}
+a:visited{
+    color:#505053;
+}
+.destroy{
+    background-color: #828287;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.destroy:hover{
+    background-color: #b20000;
+
 }

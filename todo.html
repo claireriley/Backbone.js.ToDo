@@ -7,13 +7,14 @@
         <link rel="stylesheet" type="text/css" href="todo.css">
         <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji|Roboto" rel="stylesheet">
     </head>
-    <body>
+    <body onload=' location.href="#/pending" '>
+
         <div id="full">
         <div id="base">
             <section id="todoapp">
 
-                <div id="title">Todos</div>
-                <input id="new-todo" placeholder="What needs to be done?" autofocus>
+                <div id="title"></div>
+                <input id="new-todo" type="text" placeholder="What needs to be done?">
                   
 
             <section id="main">
@@ -29,15 +30,19 @@
 
         </div>
         <div>
-            <p style="position: absolute; bottom: 0px;">Find the tutorial and code in <a href="http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/">here</a></p>
+            <p style="position: absolute; bottom: 0px;">Find the tutorial and code in <a href="http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/" target="_blank">here</a></p>
         </div> 
         <!-- Templates -->
         <script type="text/template" id="item-template">
             <div class="view">
-              <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-              <label><%- title %></label>
-              <input class="edit" value="<%- title %>">
-              <button class="destroy">remove</button>
+            <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+            <label><%- title %></label>
+            <input class="edit" value="<%- title %>">
+            <button class="destroy">remove</button>
+
+<div id="horizonal" style="width: 200px;  position: absolute; border-top: 1px dashed #dbdbdc;
+"></div>
+              
             </div>
             
         </script>  

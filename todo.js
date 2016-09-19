@@ -140,3 +140,14 @@ app.Router = Backbone.Router.extend({
 app.router = new app.Router();
 Backbone.history.start();    
 app.appView = new app.AppView(); 
+
+
+function dateGetter() {
+    var d = new Date();
+    var n = d.getDate();
+    var m = d.getMonth();
+    var y = d.getFullYear();
+    var full = "< "+m+" / "+n+" / "+y+" >"
+    document.getElementById("title").innerHTML += full;
+}
+dateGetter();
